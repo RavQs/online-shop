@@ -17,6 +17,7 @@
             placeholder="Описание"
         >
         <my-button   
+            style="align-self:flex-end; margin-top: 10px; "
             class="btn" 
             @click="createPost">Создать
         </my-button>
@@ -25,11 +26,7 @@
 </template>
 
 <script>
-import MyButton from '@/components/UI/MyButton'; 
     export default {
-        components: {
-            MyButton
-        },
         data() {
             return {
             post: {
