@@ -6,6 +6,7 @@
     
     <post-list 
         :posts="posts"
+        @remove="removePost"
     ></post-list>
 </div>
 </template>
@@ -32,6 +33,10 @@ export default {
         createPost(post) {
             this.posts.push(post)
         },
+        removePost(post) {
+            console.log(post);
+            this.posts = this.posts.filter(p => p.id !== post.id)
+        }
     }
     
 }

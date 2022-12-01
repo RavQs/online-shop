@@ -4,23 +4,21 @@
         <form @submit.prevent>
         <h4>Создание поста</h4>
             <!-- Имеется двухстороннее связывание в инпуте -->
-            <input 
+            <my-input 
             v-model="post.title" 
-            class="input" 
             type="text" 
             placeholder="Название"
         >
-        <input 
+        </my-input>
+        <my-input 
             v-model="post.desc" 
-            class="input" 
             type="text"
             placeholder="Описание"
         >
-        <my-button   
-            style="align-self:flex-end; margin-top: 10px; "
-            class="btn" 
+        </my-input>
+        <post-button   
             @click="createPost">Создать
-        </my-button>
+        </post-button>
     </form>
     </div>
 </template>
@@ -56,10 +54,4 @@ form {
     flex-direction: column;
 }
 
-.input {
-    width: 100%;
-    padding: 15px;
-    margin-top: 10px;
-    border: 3px solid teal;
-}
 </style>

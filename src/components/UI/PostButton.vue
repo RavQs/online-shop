@@ -1,12 +1,12 @@
 <template>
-    <button>
+    <button class="btn">
         <slot></slot>
     </button>
 </template>
 
 <script>
     export default {
-        name: 'my-button'
+        name: 'post-button'
     }
 </script>
 
@@ -16,5 +16,8 @@
     background-color: teal;
     color: white;
     border : 1px solid teal;
+    align-self:flex-start; 
+    margin-top: 15px; 
+    margin-bottom: 15px;
 }
 </style>

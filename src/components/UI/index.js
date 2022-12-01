@@ -1,9 +1,12 @@
-import MyButton from '@/components/UI/MyButton';
-
+import PostButton from '@/components/UI/PostButton';
+import DelButton from '@/components/UI/DelButton';
+import MyInput from '@/components/UI/MyInput';
 
 export default [
-    MyButton
-]
+    PostButton,
+    DelButton,
+    MyInput,
+];
 
 
 //импорт Ui компонентов и экспорт глобально
