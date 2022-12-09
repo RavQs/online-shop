@@ -5,14 +5,14 @@
         <h4>Создание поста</h4>
             <!-- Имеется двухстороннее связывание в инпуте -->
             <my-input 
-            v-model="post.title" 
             type="text" 
+            v-model="post.title" 
             placeholder="Название"
         >
         </my-input>
         <my-input 
-            v-model="post.desc" 
             type="text"
+            v-model="post.desc" 
             placeholder="Описание"
         >
         </my-input>
@@ -35,7 +35,7 @@
     },
     methods: {
         createPost() {
-            this.post.id = Date.now;
+            this.post.id = Date.now();
             this.$emit('create',this.post)
             this.post = {
                 title: '',

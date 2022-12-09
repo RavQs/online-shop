@@ -16,7 +16,7 @@
     background-color: teal;
     color: white;
     border : 1px solid teal;
-    align-self:flex-start; 
+    align-self:center; 
     margin-top: 15px; 
     margin-bottom: 15px;
 }
