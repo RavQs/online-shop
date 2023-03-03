@@ -19,5 +19,6 @@
     align-self:center; 
     margin-top: 15px; 
     margin-bottom: 15px;
+    margin-right: 15px;
 }
 </style>

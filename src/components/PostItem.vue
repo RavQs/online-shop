@@ -1,17 +1,16 @@
 <template>
     <div class="post">
-    <div>
-        <div><strong>Название:</strong> {{post.title}}</div>
-        <div><strong>Описание:</strong> {{post.desc}}</div>
+        <div>
+            <div><strong>Login:</strong> {{post.login}}</div>
+            <div><strong>Name:</strong> {{post.name}}</div>
+            <div><strong>Email:</strong> {{post.email}}</div>
+        </div>
+        <div class="delete">
+            <del-button
+                @click="$emit('remove',post)"> Delete
+            </del-button>
+        </div>
     </div>
-    <div class="delete">
-        <del-button
-            @click="$emit('remove',post)"> Удалить
-        </del-button>
-    </div>
-
-    </div>
-    
 </template>
 
 <script>

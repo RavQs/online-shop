@@ -1,9 +1,11 @@
 <template>
 <div class="app">
-    <H1>Страница с постами</H1>
+    <H1>Users Page</H1>
+    <login-button>Login</login-button>
+    <post-button @click="fetchUsers">Fetch users from server</post-button>
     <post-button 
     @click="showDialog"
-    >Создать пользователя</post-button>
+    >Create new user</post-button>
     <my-dialog 
     v-model:isVisible="modalWindow">
         <post-form 
@@ -14,6 +16,7 @@
         :posts="posts"
         @remove="removePost"
     ></post-list>
+    
 </div>
 </template>
 
@@ -21,6 +24,8 @@
 import PostForm from "@/components/PostForm";
 import PostList from "@/components/PostList";
 import PostButton from "@/components/UI/PostButton"
+import LoginButton from "@/components/UI/LoginButton"
+import axios from 'axios'
 
 export default {
     components: {
@@ -28,12 +33,8 @@ export default {
     },
     data() {
         return {
-            posts: [
-                { id: 1,title: 'Javascript', desc: 'Описание поста'},
-                { id: 2,title: 'Javascript 2', desc: 'Описание поста 2'},
-                { id: 3,title: 'Javascript 3', desc: 'Описание поста 3'},
-                { id: 4,title: 'Javascript 4', desc: 'Описание поста 4'},
-            ],
+            posts: [],
+
             modalWindow: false,
         }
     },
@@ -48,7 +49,19 @@ export default {
         },
         showDialog() {
             this.modalWindow = true
-        }
+        },
+        async fetchUsers() {
+            try {
+                const response = await axios.get('http://localhost:8080/api/users/findAll')
+                response.data.forEach(el => {
+                    console.log(el);
+                })
+
+                this.posts = response.data
+            } catch(e) {
+              alert('error')  
+            }
+        },
     }
     
 }

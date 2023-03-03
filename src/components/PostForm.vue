@@ -2,22 +2,28 @@
     <div>
             <!-- prevent для отмены перегрузки страницы -->
         <form @submit.prevent>
-        <h4>Создание поста</h4>
+        <h4>Create new User</h4>
             <!-- Имеется двухстороннее связывание в инпуте -->
             <my-input 
             type="text" 
-            v-model="post.title" 
-            placeholder="Название"
+            v-model="post.login" 
+            placeholder="login"
         >
         </my-input>
         <my-input 
             type="text"
-            v-model="post.desc" 
-            placeholder="Описание"
+            v-model="post.name" 
+            placeholder="name"
+        >
+        </my-input>
+        <my-input 
+            type="text"
+            v-model="post.email" 
+            placeholder="email"
         >
         </my-input>
         <post-button   
-            @click="createPost">Создать
+            @click="createPost">Create
         </post-button>
     </form>
     </div>
@@ -28,8 +34,9 @@
         data() {
             return {
             post: {
-                title: '',
-                desc: ''
+                login: '',
+                name: '',
+                email: ''
             }
         }
     },
@@ -38,8 +45,9 @@
             this.post.id = Date.now();
             this.$emit('create',this.post)
             this.post = {
-                title: '',
-                desc: ''
+                login: '',
+                name: '',
+                email: ''
             }            
         },
     }
